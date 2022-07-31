@@ -19,11 +19,12 @@ app.use(express.static("public"));
 mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false,
+  // useUnifiedTopology: true,
 });
-
+console.log("Connecting to MONgo");
 // routes
 app.use(require("./routes/api.js"));
 
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}!`);
+  console.log(`App running on port ${PORT}! http://localhost:${PORT}`);
 });
